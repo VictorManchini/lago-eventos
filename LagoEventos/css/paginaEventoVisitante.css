@@ -1,0 +1,504 @@
+@font-face {
+    font-family: 'Viga';
+    src: url('../../fonts/Viga-Regular.ttf');
+
+}
+
+@font-face {
+    font-family: 'Bangers';
+    src: url('../../fonts/Bangers-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Viga';
+    font-weight: 400;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #FFFFFF, #F4F4F4 30%);
+}
+
+.fade {
+    display: none;
+}
+
+.fade.active {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+main {
+    width: 80%;
+    margin: 210px auto;
+}
+
+.fundo {
+    background-image: url('../../img/paginaInicial/paginaDoEvento/fundo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size: 85px;
+  color: #1A5AD6;
+}
+
+.material-symbols-outlined:hover {
+    color: black;
+}
+
+.backarrow {
+ margin-bottom: 300px;   
+}
+
+.conteudo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titulo */
+.conteudo .tituloEvento {
+    align-self: center;
+    text-align: center;
+    font-size: 45px;
+    color: #173C83;
+    margin-bottom: 14px;
+}
+
+/* Imagem Principal */
+.conteudo .container-imgEvento {
+    width: 100%;
+    height: 600px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 28px;
+    margin-bottom: 27px;
+}
+
+.conteudo .container-imgEvento .imgEvento {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    object-position: center;    
+    object-fit: cover;
+}
+
+/* Informações */
+.conteudo .informacoesEvento {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 33px;
+}
+
+/* Localização */
+.conteudo .informacoesEvento .localizacaoEvento {
+    display: flex;
+    background-color: white;
+    height: 150px;
+    width: 40%;
+    border-radius: 28px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Endereço */
+.conteudo .informacoesEvento .localizacaoEvento .container-endereco {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.conteudo .informacoesEvento .localizacaoEvento .container-endereco .endereco {
+    font-size: 30px;
+    color: #1A5AD6;
+}
+
+.conteudo .informacoesEvento .localizacaoEvento .container-endereco .bairro {
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #173C83;
+}
+
+.conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+/* Imagem */
+.conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco .container-imgEndereco {
+    width: 63px;
+    height: 63px;
+    user-select: none;
+}
+
+.conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco .container-imgEndereco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco figcaption {
+    font-size: 22px;
+    color: #1A5AD6;
+}
+
+/* Categoria */
+.conteudo .informacoesEvento .categoria, .categoria-responsivo {
+    text-align: center;
+    font-family: 'Bangers';
+    font-size: 22px;
+    color: white;
+    background-color: #1A5AD6;
+    padding: 20px;
+    border-radius: 28px;
+    user-select: none;
+    align-self: center;
+}
+
+.categoria-responsivo {
+    display: none;
+}
+
+/* Entrar no Evento */
+.conteudo .informacoesEvento .entrarEvento {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    height: 150px;
+    width: 40%;
+    border-radius: 28px;
+}
+
+.conteudo .informacoesEvento .entrarEvento .container-entrarTexto {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    padding-top: 28px;
+}
+
+/* Entrar Texto */
+.conteudo .informacoesEvento .entrarEvento .container-entrarTexto .entrarTexto {
+    font-size: 25px;
+    color: #173C83;
+}
+
+.conteudo .informacoesEvento .entrarEvento .container-entrarTexto .btnEntrar {
+    font-size: 30px;
+    color: #1A5AD6;
+    user-select: none;
+    cursor: pointer;
+    width: max-content;
+    transition: 500ms;
+    transform-origin: left;
+}
+
+.conteudo .informacoesEvento .entrarEvento .container-entrarTexto .btnEntrar:hover {
+    transform: scale(1.1);
+    color: black;
+}
+
+/* Entrar Imagem */
+
+.conteudo .informacoesEvento .entrarEvento .container-figureEntrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: end;
+    padding-bottom: 28px;
+}
+
+.conteudo .informacoesEvento .entrarEvento .container-figureEntrar .container-imgEntrar {
+    width: 63px;
+    height: 63px;
+}
+
+.conteudo .informacoesEvento .entrarEvento .container-figureEntrar .container-imgEntrar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+}
+
+.conteudo .informacoesEvento .entrarEvento .container-figureEntrar figcaption {
+    font-size: 22px;
+    color: #1A5AD6;
+}
+
+.conteudo .descricaoEvento {
+    font-size: 22px;
+    color: #173C83;
+    margin-bottom: 200px;
+}
+
+/* Pop-up de erro ao entrar */
+.popupEntrar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.450);
+    user-select: none;
+    z-index: 2;
+}
+
+.popupEntrar p {
+    font-size: 30px;
+    color: #173C83;
+}
+
+.popupEntrar button {
+    height: 38px;
+    width: 55%;
+    font-size: 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #1A5AD6;
+    color: white;
+    transition: 500ms;
+}
+
+.popupEntrar button:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}
+
+/* Confirmação para entrar */
+.telaEntrar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 30%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.450);
+    user-select: none;
+    z-index: 2;
+}
+
+.telaEntrar p {
+    font-size: 30px;
+    color: #173C83;
+}
+
+.telaEntrar .telaEntrarButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.telaEntrar .telaEntrarButtons button {
+    height: 38px;
+    width: 40%;
+    font-size: 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.telaEntrar .telaEntrarButtons .telaEntrarButtonSim {
+    background-color: #1A5AD6;
+    color: white;
+    transition: 500ms;
+}
+
+.telaEntrar .telaEntrarButtons .telaEntrarButtonNao {
+    background-color: #F00;
+    color: white;
+    transition: 500ms;
+}
+
+.telaEntrar .telaEntrarButtons .telaEntrarButtonSim:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}
+
+.telaEntrar .telaEntrarButtons .telaEntrarButtonNao:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1550px) {
+    .backarrow {
+        margin-bottom: 150px;
+    }
+
+    .conteudo .container-imgEvento {
+        height: 500px;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento {
+        padding: 20px;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-endereco {
+        width: 70%;
+    }   
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-endereco .endereco {
+        font-size: 26px;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-endereco .bairro {
+        font-size: 20px;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco {
+        width: 30%;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco figcaption {
+        font-size: 20px;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento { 
+        padding: 20px;
+        align-items: center;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-entrarTexto {
+        padding-top: 0;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-figureEntrar {
+        align-self: center;
+        padding-bottom: 0;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-entrarTexto {
+        justify-content: center;
+        height: 100%;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-entrarTexto .entrarTexto {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .backarrow {
+        margin-bottom: 150px;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-endereco .endereco {
+        font-size: 22px;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento .container-figureEndereco figcaption {
+        font-size: 18px;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-entrarTexto .entrarTexto {
+        font-size: 22px;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-entrarTexto .btnEntrar {
+        font-size: 26px;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento .container-figureEntrar figcaption {
+        font-size: 18px;
+    }
+
+    .popupEntrar {
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@media (max-width: 800px) {
+    .backarrow {
+        margin-bottom: 100px;
+    }
+
+    .informacoesEvento {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .categoria {
+        display: none;
+    }
+    .categoria-responsivo {
+        display: inline-block;
+    }
+
+    .conteudo .informacoesEvento .localizacaoEvento {
+        width: 100%;
+    }
+
+    .conteudo .informacoesEvento .entrarEvento {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .container-figureEntrar {
+        width: 30%;
+    }
+
+    .popupEntrar {
+        width: 60%;
+        height: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background-image: linear-gradient(to bottom, #FFFFFF, #E9E9E9 70%);
+    }
+
+    .fundo {
+
+        background-position-y: 250px;
+    }
+
+    .conteudo .tituloEvento {
+        font-size: 30px;
+    }
+
+    .conteudo .container-imgEvento {
+        height: 300px;
+    }
+
+    .popupEntrar {
+        width: 80%;
+        height: 35%;
+    }
+}

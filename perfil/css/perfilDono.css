@@ -1,0 +1,1602 @@
+@font-face {
+    font-family: 'Viga';
+    src: url('../../fonts/Viga-Regular.ttf');
+
+}
+
+@font-face {
+    font-family: 'Bangers';
+    src: url('../../fonts/Bangers-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'VastMx';
+    src: url('../../fonts/VAST_MX.ttf');
+}
+
+:root {
+    --primary-color: #1A5AD6;
+    --secondary-color: #173C83;
+    --background-color: #E9E9E9;
+    --primary-font: 'Viga';
+    --secondary-font: 'Bangers';
+    --tertiary-font: 'VastMx';
+}
+
+main {
+    margin-top: 140px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    opacity: 0.5;
+    transition: 500ms; 
+}
+
+/* Corpo da avaliação */
+#rating {
+    height: 200px;
+    width: 15%;
+    background-color: #1A5AD6;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+}
+
+/* Container das estrelas da avaliação */
+#rating .star {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    mask-image: url(../mascaraAvaliacao/star.svg);
+    mask-size: cover;
+}
+
+/* Parte positiva da estrela(branco) */
+#rating .star .star-fill {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Parte negativa da estrela(azul escuro) */
+#rating .star .star-baseline {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 100%;
+    background-color: #0b2250;
+    z-index: -1;
+}
+
+/* Tooltip rating */
+.rating::before,
+.rating::after {
+    --scale: 0;
+    --tooltip-color: #333;
+    --arrow-size: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: -.25rem;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+    transition: 100ms transform;
+    transform-origin: bottom center; 
+}
+
+.rating::before {
+    --translate-y: calc(-100% - var(--arrow-size));   
+
+    content: attr(data-tooltip);
+    color: white;
+    font-family: 'Viga';
+    padding: .5rem;
+    width: max-content;
+    max-width: 300%;
+    background-color: var(--tooltip-color);
+    border-radius: .3rem;
+    text-align: center;
+}
+
+.rating:hover::before,
+.rating:hover::after {
+    --scale: 1;
+}
+
+.rating::after {
+    --translate-y: calc(-1 * var(--arrow-size));
+    content: '';
+    border: var(--arrow-size) solid transparent;
+    border-top-color: var(--tooltip-color);
+    transform-origin: top center; 
+}
+/* Final Tooltip rating */
+
+form.form {
+    display: none;
+}
+
+form.active {
+    display: flex;
+}
+
+.events-list {
+    display: none;
+}
+
+.active-events {
+    display: block;
+}
+
+textarea, input, select {
+    transition: 200ms;
+}
+
+input:focus, textarea:focus, input:hover, textarea:hover, select:focus, select:hover {
+    box-shadow: 1px 1px 5px black, -1px -1px 5px black;
+}
+
+#participantEvent:focus, #participantEvent:hover, #categoryEvent:focus, #categoryEvent:hover {
+    box-shadow: none;
+}
+
+.anchor-back-arrow{
+    padding-left: 38px; 
+}
+
+.material-symbols-outlined {
+    color: #173C83;
+    font-size: 70px;
+    margin-top: 30px;
+    transition: 300ms;
+}
+
+.material-symbols-outlined:hover {
+    font-size: 80px;
+}
+
+
+/* Estilização da página dono by Paduan */
+
+.div-organizacional {
+    box-sizing: border-box;
+    display: flex;
+    gap: 44px;
+    padding: 38px;
+    height: 1300px;
+}
+
+.container-profile::before {
+    content: '';
+    display: flex;
+    width: 100%;
+    height: 45px;
+    background-color: #D9D9D9;
+    border-radius: 28px 28px 0px 0px;
+    margin-bottom: 23px;
+}
+
+.container-profile {
+    background-color: var(--background-color);
+    border-radius: 28px;
+    width: 75%;
+}
+
+.profile {
+    padding-top: 28px;
+    background-color: var(--background-color);
+    width: 75%;
+    margin: 0 auto;
+}
+
+aside {
+    width: 25%;
+}
+
+.line01 {
+    align-items: center;
+    display: flex;
+    gap: 23px; 
+}
+
+.container-rating-imgProfile {
+    display: flex;
+    gap: 23px;
+    width: 30%;
+}
+
+.container-img-profile {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 28px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.img-profile {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.text-profile {
+    width: 70%;
+}
+
+.name-profile {
+    color: var(--secondary-color);
+    font-family: var(--primary-font);
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+.email-dob {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.email-profile, .dob-profile {
+    color: var(--secondary-color);
+    font-family: var(--primary-font);
+    font-size: 25px;
+}
+
+.bio-profile {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    padding: 18px 23px;
+}
+
+.line02 {
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-toggle {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    cursor: pointer;
+    font-family: var(--primary-font);
+    font-size: 22px;
+    padding: 3px 111px;
+    transition: 500ms;
+    width: 47%;
+}
+
+.btn-toggle:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.line02 .active {
+    background-color: var(--secondary-color);
+}
+
+.line03 {
+    margin-top: 24px;
+}
+
+.form .container-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.line03-title  {
+    align-self: flex-end;
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    font-size: 30px;
+}
+
+.line03-info, .event-line03 .event-line03-title {
+    color: #1A5AD6;
+    font-size: 25px;
+    font-family: var(--primary-font);
+}
+
+.event-line01 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    
+}
+
+.element01 {
+    width: 40%;
+}
+
+.img-event, .img-user {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    overflow: hidden;
+    outline: 10px solid transparent;
+    transition: 300ms ease-in-out;
+    user-select: none;
+    border-radius: 10px;
+}
+
+.img-event:hover, .img-user:hover {
+    
+    outline: 10px solid white;
+}
+
+.img-event:hover .input-personalizado, .img-user:hover .input-personalizado { 
+    opacity: 1;
+}
+
+.imgPreviewEvent, .imgPreviewUser {
+    background-color: #D9D9D9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.input-personalizado {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../img/perfil/conteudoPrincipal/camera.png");
+    background-color: rgba(0, 0, 0, 0.300);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px 200px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.event-element-right {
+    width: 60%;
+}
+
+#nameEvent, #descriptionEvent, .dateEvent, #descriptionUser, #userCPF, #userDay, #userMonth, #userYear, #userPassword, #userPasswordConfirmation {
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+    color: #585858;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    padding: 18px 16px;
+    outline: none;
+    width: 100%;
+}
+
+#descriptionEvent, .dateEvent {
+    margin-top: 15px;
+}
+
+#datepicker:focus {
+    outline: 0px;
+}
+
+#ui-datepicker-div {
+    width: 400px;
+    height: 325px;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 20px black;
+    z-index: 3;
+    display: none;
+}
+
+.ui-datepicker-header {
+    background-color: #1A5AD6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    position: absolute;
+}
+
+.ui-datepicker-prev {
+    left: 20px;
+}
+
+.ui-datepicker-next {
+    right: 20px!important;
+}
+
+.ui-icon{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.ui-datepicker-prev .ui-icon {
+    background-image: url("../../img/paginaInicial/flecha-dropdown.png")!important;
+}
+
+.ui-datepicker-next .ui-icon{
+    background-image: url("../../img/paginaInicial/flecha-dropdown-avancar.png")!important;
+
+}
+
+.ui-datepicker-title {
+    border: none;
+    font-size: 24px;
+    font-family: 'Viga';
+    color: #FFF;
+    background-color: transparent;
+}
+
+.ui-datepicker-calendar {
+    color: #173C83;
+    width: 90%;
+    margin: auto;
+}
+
+.ui-datepicker-calendar thead{
+    font-family: var(--primary-font);
+}
+
+.ui-datepicker-calendar tbody{
+    text-align: center;
+}
+
+.ui-datepicker-calendar span {
+    font-size: 18px;
+}
+
+.ui-datepicker-unselectable {
+    opacity: 0.5;
+}
+
+.ui-state-default {
+    border-radius: 10px;
+    color: #173C83!important;
+    font-size: 18px;
+    text-align: center!important;
+    background-color: transparent!important;
+    border: none!important;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-family: var(--primary-font);
+}
+
+.ui-state-default:hover {
+    background-color: #e9e9e9!important;
+}
+
+#descriptionEvent {
+    height: 147px;
+    resize: none;
+}
+
+.container-descriptionEvent, .container-descriptionUser {
+    position: relative;
+}
+
+#counterDescriptionEvent, #counterDescriptionUser {
+    color: #FFF;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    position: absolute;
+    bottom: 13px;
+    right: 25px;
+}
+
+.elements-right-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    align-items: end;
+}
+
+#categoryEvent {
+    appearance: none;
+    background-color: var(--primary-color);
+    background-image: url("../../img/perfil/conteudoPrincipal/flecha-dropdown.png");
+    background-position: right 10px top 50%;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: var(--primary-font);
+    height: 100%;
+    padding: 20px 70px 20px 25px;
+    outline: none;
+}
+
+.element03 {
+    transition: 400ms;
+}
+
+.element03:hover {
+    transform: scale(1.05);
+}
+
+.element04 {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    transition: 400ms;
+    width: 25%;   
+}
+
+.element04:hover {
+    transform: scale(1.1);
+}
+
+.element04 input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#participantEvent {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font-family: var(--primary-font);
+    font-size: 35px;
+    text-align: center;
+    outline: none;
+    width: 40%;
+}
+
+.event-line03 {
+    margin-top: 22px;
+}
+
+.event-line03 .element01 {
+    display: flex;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+#container-cepEvent{
+    width: 33%;
+}
+
+#container-addressEvent {
+    width: 66.44%; 
+}
+
+#cepEvent, #addressEvent, #neighboorhoodEvent, #placeNumberEvent, #complementEvent  {
+    width: 100%;
+}
+
+#placeNumberEvent::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.event-line03 .element02 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.event-line03 .element02 .container-input {
+    width: 33%;
+}
+
+.event-line03 .element01 input, .event-line03 .element02 input, .container-user-edit .element01 input {
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px;
+    color: #585858;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    outline: none;
+    padding: 20px 18px;
+}
+
+#btn-criar, #btn-atualizar {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    cursor: pointer;
+    font-family: var(--primary-font);
+    font-size: 24px;
+    margin: 19px auto 0 auto;
+    padding: 7px 66px;
+    transition: 500ms;
+    width: 20%;
+    
+}
+
+/* Form Editar Perfil */
+
+.line03-title02 {
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    font-size: 30px;
+}
+
+.line03-update {
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-size: 25px;
+    text-align: right;
+}
+
+.container-user-edit {
+    display: flex;
+    gap: 5%;
+}
+
+.img-user {
+    width: 100%;
+}
+
+.container-user-edit .userLine01 {
+    width: 35%;
+}
+
+.container-user-edit .userLine01 .element01{
+    width: 100%;
+}
+
+.container-edit-info {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.container-user-edit .element01 {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.container-user-edit .element01 input {
+    width: 49%;
+    
+}
+
+.container-descriptionUser {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.container-descriptionUser #descriptionUser {
+    height: 127px;
+    resize: none;
+}
+
+.container-user-edit .element02 {
+    display: flex;
+    gap: 2%;
+    width: 100%;
+    margin-top: 25px;
+}
+
+#userCPF {
+    width: 100%;
+}
+
+#userYear-error {
+    position: absolute;
+    bottom: -20px;
+    left: 35%;
+}
+
+.container-userCPF {
+    position: relative;
+    width: 35%;
+}
+
+.container-data-perfil {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    position: relative;
+}
+
+#userDay, #userMonth, #userYear {
+    width: 30%;
+}
+
+#userMonth {
+    width: 35%;
+}
+
+#userDay, #userYear, #userMonth {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.userLine03 {
+    display: flex;
+    gap: 2%;
+    margin-top: 32px;
+}
+
+#userPassword {
+    width: 49%;
+}
+
+#userPasswordConfirmation {
+    width: 49%;
+}
+
+#btn-atualizar {
+    margin-top: 25px;
+    text-align: center;
+    width: 30%;
+    padding: 7px 0;
+}
+
+.container-forgot-password {
+    width: 100%;
+    text-align: right;
+}
+
+#userForgotPassword {
+    color: var(--primary-color);
+    user-select: none;
+    font-family: var(--primary-font);
+    font-size: 22px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: 500ms;
+}
+
+#userForgotPassword:hover {
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+/* Lado direito */
+
+aside {
+    background-color: var(--background-color);
+    border-radius: 28px;
+}
+
+.container-buttons {
+    height: 100%;
+}
+
+.container-buttons-top {
+    display: flex;
+}
+
+#participatedEventsButton, #myEventsButton {
+    background-color: #D9D9D9;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    padding: 10px 18px;
+    transition: 400ms;
+    width: 50%;
+}
+
+#participatedEventsButton:hover, #myEventsButton:hover {
+    background-color: var(--secondary-color);
+    color: #FFF;
+    padding: 12px 20px;
+}
+
+#participatedEventsButton {
+    border-top-left-radius: 28px;
+}
+
+#myEventsButton {
+    border-top-right-radius: 28px;
+}
+
+.active-btn {
+    background-color: var(--primary-color)!important;
+    color: #FFF!important;
+}
+
+.container-events {
+    height: 94.5%;
+    margin-top: 23px;
+    padding: 0 17px;
+}
+
+.participatedEvents-title {
+    text-align: end;
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    font-size: 30px;
+}
+
+.events {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    height: 90%;
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;  
+    padding-right: 20px;
+}
+
+.events::-webkit-scrollbar {
+    background-color: #FFFFFF;
+    border-radius: 28px;
+}
+
+.events::-webkit-scrollbar-thumb {
+    border-radius: 28px;
+    background: #1A5AD6;
+}
+
+.container-img-event {
+    height: 85%;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.container-img {
+    width: 100%;
+    height: 100%;
+}
+
+.event-img {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.event {
+    background-color: #FFF;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 11px 11px 11px;
+    text-align: center;
+    height: 420px;
+}
+
+.info-event {
+    position: absolute;
+    bottom: 10px;
+    right: 2px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 95%;
+}
+
+.container-event-title {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 28px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    display: flex;
+}
+
+.event-title {
+    color: #FFF;
+    font-family: var(--primary-font);
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.event-category {
+    background-color: var(--primary-color);
+    border-radius: 28px;
+    color: #FFF;
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    padding: 6px 11px;
+    text-align: center;
+
+}
+
+.btn-saiba-mais {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    color: #FFF;
+    font-family: var(--primary-font);
+    font-size: 24px;
+    margin-top: 7px;
+    padding: 7px 34px;
+    text-decoration: none;
+    transition: 500ms;
+}
+
+.btn-saiba-mais:hover, #btn-criar:hover, #btn-atualizar:hover  {
+    font-size: 28px;
+    background-color: #000;
+}
+
+.error {
+    color: var(--secondary-color);
+    font-family: var(--primary-font);
+    font-size: 12px;
+}
+
+.container-name, .container-descriptionEvent, .container-date, .container-userName, .container-userEmail, .container-userPassword, .container-userPasswordConfirmation {
+    position: relative;
+}
+
+#nameEvent-error {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#descriptionEvent-error {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.dateEvent-error {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+}
+
+#userCPF-error {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.container-userName, .container-userEmail, .container-userPassword, .container-userPasswordConfirmation {
+    width: 49%;
+}
+
+#userName, #userEmail {
+    width: 100%;
+}
+
+#userName-error, #userEmail-error, #userPassword-error, #userPasswordConfirmation-error {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+#userPassword, #userPasswordConfirmation {
+    width: 100%;
+}
+
+.msgErroEventos {
+    font-size: 22px;
+    color: #0b2250;
+    font-family: var(--primary-font);
+    text-align: center;
+}
+
+@media (max-width: 1550px) { 
+
+    .profile {
+        width: 80%;
+    }
+
+    .container-rating-imgProfile {
+        width: 40%;
+    }
+
+    #rating {
+        width: 12%;
+    }
+
+    .text-profile {
+        width: 60%;
+    }
+
+    .name-profile {
+        font-size: 26px;
+    }
+
+    .bio-profile {
+        font-size: 16px;
+        padding: 16px 23px
+    }
+
+    .element01 {
+        width: 45%;
+    }
+    
+    .img-event, .img-user {
+        width: 340px
+    }
+
+    .imgPreviewEvent, .imgPreviewUser {
+        width: 340px
+    }
+
+    .event-element-right {
+        width: 55%;
+    }
+
+    .container-user-edit .userLine01 {
+        width: 40%;
+    }
+
+    .container-data-perfil {
+        width: 65%;
+        gap: 10px;
+    }
+
+    .container-data-perfil select::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .container-data-perfil {
+        position: relative;
+    }
+
+    #userMonth {
+        width: auto;
+    }
+
+    #userCPF {
+        width: 100%;
+    }
+
+    
+
+    #btn-criar, #btn-atualizar {
+        margin-bottom: 10px;
+        padding: 7px 50px;
+        width: auto;
+        
+    }
+}
+
+@media (max-width: 1100px) {
+    .div-organizacional {
+        height: auto;
+    }
+
+    .line01 {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .container-profile {
+        width: 65%;
+    }
+
+    .profile {
+        width: 90%;
+    }
+
+    .container-rating-imgProfile {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #rating {
+        width: 7%;
+    }
+
+    .text-profile {
+        width: 100%;
+    }
+
+    .btn-toggle {
+        font-size: 20px;
+        padding: 10px 50px
+    }
+
+    .event-line01, .user-line01 {
+        flex-direction: column;
+    }
+
+    .event-line01 .element01, .container-user-edit .userLine01 {
+        width: 100%;
+    }
+
+    .img-event, .img-user {
+        margin: auto;
+    }
+
+    .imgPreviewEvent, .imgPreviewUser {
+        margin: auto;
+    }
+
+    .event-element-right {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .elements-right-bottom {
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    #categoryEvent {
+        padding: 10px 35px;
+    }
+
+    #participantEvent {
+        font-size: 24px;
+    }
+
+    .img-participant {
+        width: 30px;
+        height: 30px;
+    }
+
+    .element03 {
+        position: relative;
+    }
+
+    #categoryEvent-error {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+    }
+
+    .element04 {
+        position: relative;
+        width: 20%;
+    }
+
+    #participantEvent-error {
+        position: absolute;
+        bottom: -20px
+    }
+
+    #btn-criar, #btn-atualizar {
+        margin-bottom: 10px;
+        padding: 7px 30px;
+        width: auto;
+    }
+
+    .container-user-edit {
+        flex-direction: column;
+    }
+
+    .container-edit-info {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .container-user-edit .element02 {
+        gap: 5%;
+    }
+
+    .container-userCPF {
+        width: 35%;
+    }
+
+    .container-data-perfil {
+        width: 65%;
+    }
+
+    
+    .container-data-perfil {
+        position: relative;
+    }
+
+    #userYear-error {
+        position: absolute;
+        bottom: -20px;
+        left: 35%;
+    }
+
+    
+
+    #userDay, #userYear {
+        width: 27%;
+    } 
+
+    #userMonth {
+        width: auto;
+    }
+
+    .container-userCPF {
+        position: relative;
+    }
+
+    #userCPF {
+        width: 100%;
+    }
+
+    #userCPF-error {
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+    }
+
+    aside {
+        width: 31%;
+    }
+
+    .event-title {
+        font-size: 18px;
+    }
+
+    .btn-saiba-mais {
+        font-size: 20px;   
+    }
+
+    .btn-saiba-mais:hover {
+        font-size: 24px;   
+    }
+}
+
+@media (max-width: 840px) {
+    .div-organizacional {
+        flex-direction: column;
+        padding: 38px 20px;
+    }
+
+    .container-profile {
+        width: 100%;
+    }
+
+    .profile {
+        padding-top: 0;
+        width: 90%;
+    }
+
+    #rating {
+        width: 5%;
+        height: auto;
+    }
+
+    .container-img-profile {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name-profile {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .email-dob {
+        margin-bottom: 5px;
+    }
+
+    .email-profile, .dob-profile {
+        font-size: 20px;
+    }
+
+    .bio-profile {
+        font-size: 16px;
+        padding: 5px 23px;
+    }
+
+    .btn-toggle {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .element01 {
+        width: 49%;
+    }
+
+    .img-event, .img-user {
+        width: 350px;
+        margin: auto;
+    }
+
+    .imgPreviewEvent, .imgPreviewUser {
+        width: 100%;
+        height: 350px;
+    }
+
+    #nameEvent, #descriptionEvent, .dateEvent, #descriptionUser, #userCPF, #userDay, #userMonth, #userYear, #userPassword, #userPasswordConfirmation {
+        font-size: 16px;
+    }
+
+    #nameEvent-error {
+        bottom: 0;
+    }
+
+    #descriptionEvent {
+        margin-top: 13px;
+    }
+
+    .dateEvent {
+        margin-top: 7px;
+    }
+
+    .elements-right-bottom {
+        margin-top: 11px;
+    }
+
+    .container-user-edit .element02 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #userCPF {
+        width: 100%;
+    }
+
+    .container-data-perfil {
+        width: 100%;
+    }
+
+    .event-line03 .element01 input, .event-line03 .element02 input, .container-user-edit .element01 input {
+        font-size: 16px;
+    }
+
+    .container-descriptionUser {
+        margin-top: 7px;
+    }
+
+    .container-user-edit .element02 {
+        margin-top: 5px;
+    }
+
+    #userName, #userEmail, #descriptionUser {
+        padding: 14px 18px;
+    }
+
+    .container-userCPF {
+        width: 100%;
+    }
+
+    #userCPF {
+        padding: 10px 18px;
+        width: 100%;
+    }
+
+    #userDay, #userMonth, #userYear {
+        padding: 14px 16px;
+        width: 33%
+    }
+
+    .userLine03 {
+        margin-top: 7px;
+    }
+
+    #userPassword, #userPasswordConfirmation {
+        padding: 14px 18px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    .events {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .container-events {
+        padding-bottom: 17px;
+    }
+
+    .event {
+        width: 240px;
+    }
+
+    .container-img-event {
+        width: 220px;
+        height: 230px;
+    }
+
+    .container-img {
+        height: 100%;
+    }
+
+    .event-title {
+        font-size: 20px;
+    }
+
+    .event-category {
+        font-size: 14px;
+    }
+
+    .btn-saiba-mais {
+        font-size: 18px;
+    }
+
+    .btn-saiba-mais:hover { 
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 430px) {
+    .line01 {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .container-rating-imgProfile {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #rating {
+        width: 10%;
+    }
+
+    .text-profile {
+        width: 100%;
+    }
+
+    .btn-toggle {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .event-line01, .userLine01{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-line01 .element01, .userLine01 .element01 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .img-event, .img-user {
+        width: 100%;
+    }
+
+    .img-event, .img-user {
+        height: 280px;
+    }
+
+    .imgPreviewEvent, .imgPreviewUser {
+        width: 100%;
+        height: 280px;
+    }
+
+    .event-element-right {
+        width: 100%;
+    }
+
+    #nameEvent-error {
+        bottom: 0;
+    }
+
+    #ui-datepicker-div { 
+        width: 300px;
+    }
+
+    .ui-datepicker-title {
+        font-size: 22px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #categoryEvent {
+        padding: 12px 40px;
+    }
+
+    .element03 {
+        position: relative;
+    }
+
+    #participantEvent {
+        font-size: 24px;
+    }
+
+    .img-participant {
+        width: 30px;
+        height: 30px;
+    }
+
+    #container-cepEvent {
+        width: 30%;
+    }
+
+    #container-addressEvent {
+        width: 68%;
+    }
+
+    .event-line03 .element02 .container-input {
+        width: 32%;
+    }
+
+    .container-user-edit {
+        flex-direction: column;
+    }
+
+    .line03-update {
+        margin-bottom: 15px;
+    }
+
+    .container-edit-info {
+        width: 100%;
+    }
+
+    .container-user-edit .userLine01, .container-user-edit .userLine02 {
+        width: 100%;
+    }
+
+    .container-user-edit .element02 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #userCPF {
+        width: 100%;
+    }
+
+    .container-data-perfil {
+        position: relative;
+        width: 100%;
+    }
+
+    #userYear-error {
+        position: absolute;
+        bottom: -20px;
+        left: 35%;
+    }
+
+    #userForgotPassword {
+        font-size: 20px;
+    }
+
+    .event {
+        width: 220px;
+    }
+
+    .container-img-event {
+        width: 200px;
+    }
+
+    .event-title {
+        font-size: 16px;
+    }
+
+    .event-category {
+        font-size: 12px;
+    }
+
+    .btn-saiba-mais {
+        font-size: 18px;
+    }
+
+    .btn-saiba-mais:hover { 
+        font-size: 24px;
+    }
+}

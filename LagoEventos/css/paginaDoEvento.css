@@ -1,0 +1,983 @@
+@font-face {
+    font-family: 'Viga';
+    src: url('../../fonts/Viga-Regular.ttf');
+
+}
+
+@font-face {
+    font-family: 'VastMx';
+    src: url('../fonts/VAST_MX.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Viga';
+}
+
+body {
+    background-image: linear-gradient(to bottom, #FFFFFF, #E9E9E9 40%);
+}
+
+.fade {
+    display: none;
+}
+
+.fade.active {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#fundo {
+    background-image: url('../../img/paginaInicial/paginaDoEvento/fundo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+/* Parte principal da página do evento */
+
+.fundo {
+    background-color: #F5F5F5;;
+}
+
+main {
+    width: 80%;
+    margin: 210px auto;
+}
+
+.btn-voltar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-voltar img {
+    width: 80px;
+    height: 80px;
+}
+
+.secao-evento {
+    margin: 172px auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.secao-evento .data-evento {  
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    width: 300px;
+    align-self: flex-end;
+    text-align: center;
+    user-select: none;
+}
+
+.secao-evento .data-evento p:nth-child(1){
+    background-color: #1A5AD6;
+    padding: 10px 45px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    color: #FFF;
+    font-family: 'Viga';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+}
+
+.secao-evento .data-evento p:nth-child(2){
+    color: #1A5AD6;
+    font-family: 'Viga';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    background-color: #FFFFFF;
+    padding: 10px 45px;
+    width: 100%;
+}
+
+.conteudo-evento {
+    text-align: center;
+}
+
+.conteudo-evento h1 {
+    color: #1A5AD6;   
+    font-family: 'Viga';
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 417;
+    line-height: normal;
+    margin-bottom: 68px;
+}
+
+.conteudo-evento .img-evento {
+    width: 100%;
+    height: 600px;
+    padding: 23px 30px;
+    background-color: #FFF;
+    border-radius: 28px;
+    margin-bottom: 69px;
+} 
+
+.conteudo-evento .img-evento img{
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.infos-evento {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+}
+
+.infos-evento .descricao-evento {
+    color: #173C83;
+    font-family: 'Viga';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.infos-adicionais-evento .lista-participantes .container-participantes {
+    display: flex;
+    gap: 60px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.infos-adicionais-evento {
+    display: flex;
+    gap: 2%;
+    width: 100%;
+}
+
+.infos-adicionais-evento .lista-participantes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFF;
+    padding: 15px;
+    gap: 15px;
+    border-radius: 28px;
+    width: 60%;
+}
+
+.container-img {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    border-radius: 28px;
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.legendaDonoAdm {
+    position: absolute;
+    transform: translateY(-30px);
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.750);
+    width: 100%;
+    transition: 500ms;
+    color: white;
+}
+
+.figure-perfil-participante a {
+    text-decoration: none;
+}
+
+.figure-perfil-participante:hover .legendaDonoAdm{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.img-perfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-user-drag: none;
+}
+
+.infos-adicionais-evento .lista-participantes p {
+    color: #1A5AD6;
+    font-family: 'Viga';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.infos-adicionais-evento .lista-participantes .container-participantes::-webkit-scrollbar {
+    height: 24px;
+    background-color: #FFFFFF;
+    border-radius: 28px;
+}
+
+.infos-adicionais-evento .lista-participantes .container-participantes::-webkit-scrollbar-thumb {
+    width: 78px;
+    border-radius: 28px;
+    background: #1A5AD6;
+}
+
+.infos-adicionais-evento .lista-participantes figure {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    scroll-snap-align: start;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.infos-adicionais-evento .lista-participantes figure figcaption {
+    color: #173C83;
+    font-family: 'Viga';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.localização-evento {
+    display: flex;
+    background-color: #FFF;
+    border-radius: 28px;
+    /* padding: 67px 45px; */
+    padding: 15px 45px;
+    align-items: space-between;
+    text-align: left;
+    flex-direction: column;
+    width: 38%;
+
+}
+
+.localização-evento .endereco {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.localização-evento .endereco .container-rua {
+    color: #173C83;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.localização-evento .endereco .container-rua .span-rua {
+    font-family: 'Viga';
+    font-size: 30px;
+    
+    
+}
+
+.localização-evento .endereco .container-rua .span-bairro {
+    font-family: 'Viga';
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.msg-referencia {
+    color: #1A5AD6;
+    font-family: 'Viga';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container-figure-endereco {
+    text-align: center;
+    margin: auto;
+}
+
+.figure-endereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-figure-endereco figcaption {
+    color: #1A5AD6;
+    font-family: 'Viga';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: max-content;
+}
+
+.container-img-endereco {
+    width: 64px;
+    height: 81px;
+}
+
+.container-img-endereco .img-endereco {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.secao-comentarios {
+    background-color: #FFF;
+    border-radius: 28px;
+    padding: 20px 25px;
+    
+}
+
+.secao-comentarios h2 {
+    color: #585858;
+    font-family: 'Viga';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 62px;
+}
+
+.enviar-comentarios {
+    display: flex;
+    justify-content: space-between;
+    width: 94%;
+    margin-bottom: 49px;
+}
+
+.backarrow {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size: 80px;
+  color: #1A5AD6;
+  transition: 500ms;
+}
+
+.backarrow:hover {
+    color: black;
+}
+
+.input-comentario {
+    width: 80%;
+    border: none;
+    border-bottom: 3px solid #585858;
+    color: #1A5AD6;
+    font-size: 24px;
+    outline: none;
+    height: 30px;
+    align-self: flex-end;
+}
+
+.btn-enviar {
+    background-color: transparent;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-enviar img {
+    width: 90px;
+    height: 90px;
+}
+
+.secao-comentarios .comentarios-perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.comentarios {
+    overflow-y: scroll;
+    scroll-snap-type: x mandatory;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+
+.comentarios::-webkit-scrollbar {
+    background-color: #FFFFFF;
+    border-radius: 28px;
+}
+
+.comentarios::-webkit-scrollbar-thumb {
+    width: 78px;
+    border-radius: 28px;
+    background: #1A5AD6;
+}
+
+.container-comentario {
+    display: flex;
+    gap: 24px;
+    width: 86%;
+    background-color: #F3F3F3;
+    border-radius: 28px;
+    padding: 15px 12px;
+    cursor: pointer;
+}
+
+.texto-comentario p:nth-child(1){
+    font-family: 'Viga';
+    font-size: 30px;
+    color: #173C83;
+    user-select: none;
+}
+
+.texto-comentario p:nth-child(2){
+    color: #1A5AD6;
+    font-family: 'Viga';
+    font-size: 25px;
+    user-select: none;
+}
+
+.texto-comentario {
+    pointer-events: none;
+}
+
+.container-excluir-evento {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-excluir-evento button {
+    color: #FFF;
+    font-family: 'Viga';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 6px 17px;
+    border: none;
+    border-radius: 10px;
+    width: 380px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container-excluir-evento button {
+    background: #F00;
+    transition: 500ms;
+}
+
+.container-excluir-evento .terminarEvento {
+    background: #1A5AD6;
+}
+
+.container-excluir-evento .terminarEvento:hover {
+    background: black;
+}
+
+.container-excluir-evento button:hover, .telaSair .telaSairButtons .telaSairButtonSim:hover {
+    transform: scale(1.1);
+    background: #1A5AD6;
+}
+
+.telaSair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.450);
+    user-select: none;
+    z-index: 2;
+}
+
+.telaSair p {
+    font-size: 30px;
+    color: #173C83;
+}
+
+.telaSair .telaSairButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.telaSair .telaSairButtons button {
+    height: 38px;
+    width: 40%;
+    font-size: 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.telaSair .telaSairButtons .telaSairButtonSim {
+    background-color: #F00;
+    color: white;
+    transition: 500ms;
+}
+
+.telaSair .telaSairButtons .telaSairButtonNao {
+    background-color: #1A5AD6;
+    color: white;
+    transition: 500ms;
+}
+
+.telaSair .telaSairButtons .telaSairButtonNao:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}
+
+.popUpGerenciamento, .popUpComentario  {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    list-style: none;
+    background-color: white;
+    font-size: 22px;
+    width: 300px;
+    border-radius: 10px;
+    gap: 4px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.popUpGerenciamento li, .popUpComentario li {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #173C83;
+    transition: 300ms ease;
+}
+
+.popUpGerenciamento li:hover, .popUpComentario li:hover {
+    background-color: #dddddd;
+}
+
+.popUpGerenciamento li a, .popUpComentario li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 4px;
+    color: #173C83;
+    width: 100%;
+    height: 100%;
+}
+
+.popUpGerenciamento .perfil:hover a {
+    color: #1A5AD6;
+}
+
+.popUpGerenciamento .tornarADM:hover {
+    color: #0da108;
+}
+
+.popUpGerenciamento .expulsar:hover,
+.popUpGerenciamento .removerADM:hover,
+.li-removerComentario .removerComentario:hover {
+    color: #F00;
+}
+
+@media (max-width: 1200px) {
+    #fundo {
+        background-position-y: 150px;
+    }
+
+    main {
+        width: 95%;
+        margin-bottom: 10px;
+    }
+
+    .btn-voltar {
+        margin-left: 10px;
+    }
+
+    .secao-evento {
+        margin: 60px auto;
+        padding: 10px;
+    }
+
+    .secao-evento .data-evento { 
+        margin-bottom: 60px;
+    }
+
+    .conteudo-evento .img-evento {
+        padding: 10px 15px;
+    }
+    .infos-evento {
+        gap: 20px;
+    }
+
+    .infos-evento .descricao-evento {
+        font-size: 25px;
+        text-align: justify;
+    }
+
+
+    .infos-adicionais-evento .lista-participantes .container-participantes {
+        gap: 30px;
+    }
+    .infos-adicionais-evento .lista-participantes p {
+        color: #1A5AD6;
+        font-family: 'Viga';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .infos-adicionais-evento .lista-participantes .container-participantes::-webkit-scrollbar {
+        height: 20px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure figcaption {
+        font-size: 19px;
+    }
+
+    .localização-evento {
+        padding: 20px 20px;
+        align-items: center;
+        text-align: left;
+    }
+
+    .endereco {
+        min-width: 100%;
+    }
+
+    .localização-evento .endereco .container-rua span:nth-child(1) {
+        font-size: 24px;
+    }
+
+    .localização-evento .endereco .container-rua span:nth-child(2) {
+        font-size: 22px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .infos-evento .descricao-evento {
+        font-size: 18px;
+    }
+    .secao-evento .data-evento p:nth-child(1){
+        background-color: #1A5AD6;
+        padding: 10px 45px;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        color: #FFF;
+        font-family: 'Viga';
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 100%;
+    }
+    
+    .secao-evento .data-evento p:nth-child(2){
+        color: #1A5AD6;
+        font-family: 'Viga';
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-bottom-left-radius: 28px;
+        border-bottom-right-radius: 28px;
+        background-color: #FFFFFF;
+        padding: 10px 45px;
+        width: 100%;
+    }
+    
+
+    .infos-adicionais-evento .lista-participantes figure {
+        gap: 10px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure figcaption {
+        font-size: 19px;
+    }
+
+    .localização-evento {
+        padding: 15px 15px;
+    }
+
+    .localização-evento .endereco {
+        width: 70%;
+    }
+
+    .localização-evento .endereco .container-rua span:nth-child(1) {
+        font-size: 23px;
+    }
+
+    .localização-evento .endereco .container-rua span:nth-child(2) {
+        font-size: 20px;
+    }
+
+    .msg-referencia {
+        font-size: 20px;
+    }
+
+    .container-figure-endereco {
+        width: 30%;
+    }
+
+    .container-figure-endereco img {
+        width: 70px;
+        height: 80px;
+    }
+
+    .container-figure-endereco figcaption {
+        font-size: 22px;
+    }
+    
+    .conteudo-evento h1 {
+        color: #1A5AD6;   
+        font-family: 'Viga';
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 417;
+        line-height: normal;
+        margin-bottom: 68px;
+    }
+
+    .secao-comentarios h2 {
+        font-size: 25px;
+    }
+
+    .enviar-comentarios {
+        width: 100%;
+        gap: 10px;
+        align-items: flex-end;
+        margin-bottom: 49px;
+    }
+
+    .secao-comentarios .comentarios-perfil {
+        width: 100px;
+        height: 100px;
+        
+    }
+
+    .btn-enviar img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .texto-comentario p:nth-child(1){
+        font-size: 25px;
+    }
+
+    .texto-comentario p:nth-child(2){
+        font-size: 20px;
+    }
+
+    footer {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+
+    footer button {
+        font-size: 16px;
+        width: 300px;
+        border-radius: 10px;
+        
+    }
+}
+
+
+@media (max-width: 430px) {
+    #fundo {
+        background-position-y: 300px;
+    }
+
+    .btn-voltar img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .secao-evento .data-evento { 
+        align-items:center;
+        align-self: center;
+        width: 100%;
+    }
+
+    .conteudo-evento h1 {
+        font-size: 30px;
+    }
+
+    .conteudo-evento .img-evento {
+        padding: 10px 15px;
+        height: 200px;
+    }
+
+    .infos-evento {
+        flex-direction: column;
+    }
+
+    .infos-evento .descricao-evento {
+        width: 90%;
+        font-size: 18px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .infos-adicionais-evento {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .infos-adicionais-evento .lista-participantes {
+        width: 100%;
+    }
+
+    .infos-adicionais-evento .lista-participantes p {
+        font-size: 24px;
+    }
+
+    .infos-adicionais-evento .lista-participantes .container-participantes::-webkit-scrollbar {
+        height: 14px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure {
+        gap: 10px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .infos-adicionais-evento .lista-participantes figure figcaption {
+        font-size: 18px;
+    }
+
+    .localização-evento {
+        flex-direction: column;
+        padding: 30px 25px;
+        text-align: center;
+        gap: 30px;
+        width: 100%;
+    }  
+
+    .localização-evento .endereco {
+        gap: 10px;
+    }
+
+    .localização-evento .endereco .container-rua span:nth-child(1) {
+        font-size: 28px;
+        text-align: left;
+    }
+
+    .localização-evento .endereco .container-rua span:nth-child(2) {
+        font-family: 'Viga';
+        font-size: 22px;
+        text-align: left;
+    }
+
+    .msg-referencia {
+        font-size: 18px;
+    }
+
+    .container-figure-endereco figcaption {
+        font-size: 22px;
+    }
+
+    .secao-comentarios h2 {
+        font-size: 20px;
+    }
+
+    .secao-comentarios .comentarios-perfil {
+        width: 50px;
+        height: 50px;
+    }
+
+    .backarrow {
+        font-size: 40px;
+    }
+
+    #foto-perfil-comentar {
+        display: none;
+    }
+
+    .container-comentario {
+        width: 100%;
+    }
+
+    .btn-enviar img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .comentarios::-webkit-scrollbar-thumb {
+        width: 10px;
+    }
+
+    .texto-comentario p:nth-child(1){
+        font-size: 22px;
+    }
+
+    .texto-comentario p:nth-child(2){
+        font-size: 18px;
+    }
+
+    .container-excluir-evento {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container-excluir-evento button {
+        width: 250px;
+    }
+}

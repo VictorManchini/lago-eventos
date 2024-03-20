@@ -1,0 +1,993 @@
+main {
+    margin: 140px 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+    opacity: 0.5; 
+}
+
+.secao-evento-impulsionado {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 65px 0 85px 0;
+}
+
+.div-evento-impulsionado {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.div-evento-impulsionado h1 {
+    color: #173C83;
+    font-family: 'Viga';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.palavra-destaque {
+    color: #1A5AD6;
+    font-family: 'Bangers';
+}
+
+.figure-evento-impulsionado {
+    background-image: url("../../img/paginaInicial/conjuntoImagem/fundoImagem.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 850px;
+    height: 370px;
+    border-radius: 28px;
+    padding: 10px;
+}
+
+.figure-evento-impulsionado img {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    object-fit: cover;
+}
+
+.figure-evento-impulsionado figcaption {
+    color: #FFF;
+    font-family: 'Viga';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    background-color: rgba(0, 0, 0, 0.508);
+    padding: 10px;
+    border-radius: 10px; 
+}    
+
+.btn-saiba-mais .link-evento {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.figure-evento-impulsionado figcaption p {
+    margin-bottom: 0;
+}
+
+.btn-saiba-mais {
+    border-radius: 10px;
+    background: #1A5AD6;
+    color: #FFF;
+    font-family: 'Viga';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 auto;
+    border: none;
+    padding: 7px 34px;
+    transition: 0.7s;
+    padding: 10px 40px;
+
+}
+
+.div-evento-impulsionado .btn-saiba-mais:hover {
+    transform: scale(1.2); 
+}
+
+.secao-eventos-categoria-impulsionada {
+    background-color: #E9E9E9;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.header-categoria-impulsionada {
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 40px 0 40px;
+    align-items: center;
+}
+
+ h2 {
+    color: #173C83;
+    font-family: 'Viga';
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.header-categoria-impulsionada h2:nth-child(2) {
+    color: #1A5AD6;
+    font-family: 'Bangers';
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+.eventos-categoria-impulsionada {
+    padding: 0 29px;
+    margin-bottom: 36px;
+}
+
+.container-eventos {
+    width: 100%;
+    padding-bottom: 28px;
+    overflow-x: auto;
+    user-select: none;
+    gap: 43px;
+    display: flex;
+}
+
+.container-eventos::-webkit-scrollbar {
+    height: 24px;
+    background-color: #FFFFFF;
+    border-radius: 28px;
+}
+
+.container-eventos::-webkit-scrollbar-thumb {
+    width: 78px;
+    border-radius: 28px;
+    background: #1A5AD6;
+}
+.container-card-evento {
+    min-width: 400px;
+    padding: 0;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.card-evento {
+    border-radius: 10px;
+    border: none;
+    background-color: #FFF;
+    padding: 12px 15px 15px 15px;
+    height: 500px;
+    width: 400px;
+}
+
+.card-body {
+    height: 100%;
+    text-align: center;
+    user-select: none;
+}
+
+.container-eventos .btn-saiba-mais:hover {
+    box-shadow: 5px 5px 10px 5px #1a59d673;
+}
+
+.eventos-categoria-impulsionada figure, .card-evento-body figure {
+    position: relative;
+    height: 85%;
+}
+
+.eventos-categoria-impulsionada figure img {
+    pointer-events: none;
+    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eventos-categoria-impulsionada figure:hover .container-texto-evento{
+    top: 0;
+    bottom: 350px;
+    
+}
+
+.eventos-categoria-impulsionada figure:hover .nome-evento-impulsionado{
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.eventos-categoria-impulsionada figure:hover .container-texto-evento .descricao-evento-impulsionado{
+    opacity: 1;
+}
+.container-texto-evento {
+    position: absolute;
+    bottom: 50px;
+    top: 300px;
+    transition: all 700ms ease;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.eventos-categoria-impulsionada figcaption, .card-evento-body figcaption { 
+    color: #FFF;
+    font-family: 'Viga';
+    text-align: center;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+
+}
+
+.descricao-evento-impulsionado {
+    opacity: 0;
+    transition: all 700ms ease;
+    width: 100%;
+    word-wrap: break-word;
+    color: #FFF;
+    font-family: 'Viga';
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 5px;
+}
+
+.nome-evento-impulsionado, .card-evento-body figcaption p:nth-child(1){
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-evento img {
+    border-radius: 0;
+}
+
+.msg-erro-eventos, .msg-result-evento {
+    font-size: 24px;
+    font-family: 'Viga';
+    color: #1A5AD6;
+    margin: 0 auto;
+}
+
+.msg-result-evento {
+    margin-left: 60px;
+}
+
+.secao-outros-eventos {
+    margin: 145px auto 0 auto;
+    width: 80%;
+}
+
+.article-categorias {
+    margin-bottom: 75px;
+    display: flex;
+    gap: 59px;
+}
+
+.categorias {
+    width: 70%;
+}
+
+.erro-categorias-secundaria {
+    color: #1A5AD6;
+    font-family: 'Viga';
+    font-size: 18px;
+}
+
+.data {
+    width: 30%;
+}
+
+.container-data {
+    border-radius: 28px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;   
+    margin: 0 auto;
+    height: 100px;
+}
+
+
+.data h2 {
+    text-align: right;
+}
+
+.container-data .dataNum, .container-data .barraData {
+    font-size: 38px;
+    font-family: 'Viga';
+    color: #173C83;
+}
+
+.btn-img-data {
+    width: auto;
+    margin-left: 60px;
+    border: none;
+}
+
+.btn-img-data img {
+    width: 70px;
+    height: 70px;
+}
+
+#datepicker {
+    border: none;
+    font-size: 38px;
+    font-family: 'Viga';
+    color: #173C83;
+    background-color: transparent;
+    width: 100%;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+#datepicker:focus {
+    outline: 0px;
+}
+
+#ui-datepicker-div {
+    width: 600px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 20px black;
+    z-index: 3;
+}
+
+.ui-datepicker-header {
+    background-color: #1A5AD6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    top: 13px!important;
+}
+
+.ui-datepicker-next {
+    right: 20px!important;
+}
+
+.ui-icon{
+    background-image: url("../../img/paginaInicial/flecha-dropdown.png")!important;
+    width: 35px;
+    height: 35px;
+    background-position: center;
+    background-size: contain;
+}
+
+.ui-datepicker-next .ui-icon{
+    background-image: url("../../img/paginaInicial/flecha-dropdown-avancar.png")!important;
+
+}
+
+.ui-datepicker-title {
+    border: none;
+    font-size: 38px;
+    font-family: 'Viga';
+    color: #FFF;
+    background-color: transparent;
+}
+
+.ui-datepicker-calendar {
+    color: #173C83;
+    
+}
+
+.ui-datepicker-calendar span {
+    font-size: 18px;
+}
+
+.ui-datepicker-unselectable {
+    opacity: 0.5;
+}
+
+.ui-state-default {
+    color: #173C83!important;
+    font-size: 18px;
+    text-align: center!important;
+    background-color: transparent!important;
+    border: none!important;
+}
+
+.ui-state-default:hover {
+    background-color: #e9e9e9!important;
+}
+
+.btn-filtrar {
+    background-color: #1A5AD6;
+    color: #FFF;
+    font-size: 24px;
+    font-family: 'Viga';
+    padding: 7px 34px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.article-categorias .container-categorias {
+    border-radius: 28px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;   
+    margin: 0 auto;
+    
+}
+
+.article-categorias ul {
+    display: flex;
+    gap: 29px;
+    margin-bottom: 0;
+    width: 90%;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.categorias-principal, .categorias-secundaria {
+    display: flex;
+    gap: 29px;
+    justify-content: center;
+}
+
+.categorias-principal {
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.categorias-secundaria {   
+    display: none;
+    background-color: #f0f0f0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.categorias-telas-menores {
+    display: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.categorias-telas-menores::-webkit-scrollbar {
+    height: 14px;
+    background-color: #FFFFFF;
+    border-radius: 28px;
+}
+
+.categorias-telas-menores::-webkit-scrollbar-thumb {
+    width: 78px;
+    border-radius: 28px;
+    background: #1A5AD6;
+}
+
+.article-categorias .container-categorias ul li {
+    list-style: none;
+    color: #1A5AD6;
+    font-family: 'Bangers';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container-categorias ul button {
+    border: 3px solid #1A5AD6;
+    border-radius: 28px;
+    padding: 15px;
+    background-color: #FFF;
+}
+
+.container-categorias ul button:hover,  .container-categorias ul button:hover li{
+    background: #1A5AD6;
+    color: #FFF;
+}
+
+#ativo {
+    background: #1A5AD6;
+    color: #FFF;
+}
+
+.btn-img-dropdown {
+    border: none;
+    width: 10%;
+    align-self:flex-start;
+}
+
+.container-categorias button img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    transition: 0.8s;
+}
+
+.abrirDropdown {
+    transition: 0.8s;
+    transform: rotate(-90deg);
+}
+
+.article-eventos {
+    margin: auto;
+}
+
+.article-eventos .row {
+    margin: auto;
+}
+
+.article-eventos .card {
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.article-eventos .card-evento-body {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.article-eventos .card-evento-body div {
+    text-align: center;
+    top: 320px;
+}
+
+.article-eventos .card-evento-body .card-img-top {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.article-eventos .card-evento-body figcaption {
+    right: 0;
+    
+}
+
+.card-evento-body figcaption p:nth-child(1){
+    padding: 0;
+    font-size: 40px;
+}
+
+.article-eventos .card-evento-body figcaption p:nth-child(2){
+    border-radius: 28px;
+    background: #1A5AD6;
+    color: #FFF;
+    font-family: 'Bangers';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 7px 16px;
+    width: 70%;
+    flex-shrink: 0;
+    text-align: center;
+    justify-self: end;
+}
+
+.article-eventos .card-evento-body div figcaption p  {
+    font-size: 21px;
+}
+
+.msg-erro-eventos  {
+    width: 1000px;
+    text-align: center;
+}
+
+.img-erro {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-outros-eventos a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-outros-eventos:hover {
+    transform: scale(1.1);
+}
+
+.pagination {
+    margin-top: 25px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-link {
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.container-imagens {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 2150px) {
+    .article-categorias .container-categorias {
+        width: 80%!important;
+    }
+}
+
+
+@media (min-width: 1950px) {
+    .article-categorias .container-categorias {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1550px) {
+    .secao-outros-eventos {
+        width: 90%;
+    }
+
+    .article-eventos .card { 
+        height: 400px;
+    }
+
+    .article-eventos .card-evento-body div {
+        top: 250px;
+    } 
+
+    .article-eventos .card-evento-body div figcaption p {
+        font-size: 28px;
+    }
+
+    .categorias {
+        width: 65%;
+    }
+
+    
+
+    .data {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .secao-evento-impulsionado {
+        flex-direction: column;
+        padding-bottom: 65px;
+    }
+
+    .div-evento-impulsionado {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .figure-evento-impulsionado {
+        width: 600px;
+        height: 325px;
+    }
+
+    .eventos-categoria-impulsionada figcaption, .card-evento-body figcaption {
+        font-size: 22px;
+    }
+
+    .article-categorias .container-categorias {
+        justify-content: space-around;
+    }
+    
+    .container-card-evento {
+        min-width: 300px;
+    }
+
+    .card-evento {
+        width: 300px;
+        height: 400px;
+    }
+    
+    .container-texto-evento {
+        top: 230px;
+    }
+
+    .btn-saiba-mais {
+        font-size: 20px;
+        padding: 5px 30px;
+    }
+
+    .article-categorias {
+        gap: 29px;
+    }
+
+    .categorias-principal, .categorias-secundaria {
+        gap: 15px;
+    }
+    .article-categorias .container-categorias ul {
+        padding-left: 0;
+    }
+
+    .article-categorias .container-categorias ul li {
+        font-size: 18px;
+    }
+
+    #datepicker {
+        font-size: 30px;
+    }
+
+    .btn-filtrar {
+        font-size: 20px;
+        padding: 7px 20px;
+    }
+
+    .article-eventos .row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1023px) {
+    .secao-outros-eventos {
+        margin-top: 100px;
+    }
+
+    .article-categorias .container-categorias {
+        width: auto;
+    }
+
+    .categorias-principal, .categorias-secundaria {
+        display: none;
+    }
+
+    .btn-img-dropdown {
+        display: none;
+    }
+
+    .article-categorias ul {
+        padding-left: 0;
+    }
+
+    .categorias-telas-menores {
+        display: flex;
+        padding-bottom: 20px;
+        gap: 29px;
+    }
+
+    
+}
+
+@media (max-width: 800px) {
+    .figure-evento-impulsionado {
+        width: 500px;
+        height: 300px;
+        padding: 10px;
+        margin: auto;
+    }
+    .figure-evento-impulsionado img{
+        width: 95%;
+        height: 99%;
+    }
+
+    .figure-evento-impulsionado figcaption {
+        right: 30px;
+        bottom: 20px;
+    }
+
+    .article-eventos .card { 
+        height: 350px;
+        width: 90%;
+    }
+
+    .article-eventos .card-evento-body div {    
+        top: 220px;
+    }
+
+    .msg-result-evento {
+        margin-left: 0;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .article-categorias {
+        gap: 30px;
+    }
+
+    .categorias {
+        width: 60%;
+    }
+
+    .btnResponsivo1 li {
+        font-size: 20px!important;
+    }
+
+    .data {
+        width: 40%;
+        
+    }
+    
+    .container-data {
+        text-align: center;
+        height: 108px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #datepicker {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .article-eventos .card-evento-body div figcaption p {
+        font-size: 20px;
+    }
+}
+@media (max-width: 430px) {
+    .div-evento-impulsionado h1 {
+        font-size: 28px;
+    }
+
+    .figure-evento-impulsionado {
+        width: 350px;
+        height: 250px;
+        padding: 10px;
+        margin: auto;
+    }
+
+    .figure-evento-impulsionado img{
+        width: 95%;
+        height: 99%;
+    }
+
+    .figure-evento-impulsionado figcaption {
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.685);
+    }
+
+    
+
+    .header-categoria-impulsionada h2:nth-child(1) {
+        font-size: 28px;
+    }
+
+    .header-categoria-impulsionada h2:nth-child(2) {
+        font-size: 30px;
+    }
+
+    .msg-erro-eventos {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .article-categorias {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-categorias h2 {
+        padding-right: 0;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .container-card-evento {
+        min-width: 300px;
+    }
+
+    .container-texto-evento {
+        top: 230px;
+    }
+
+    .article-categorias .container-categorias {
+        width: 100%;
+    }
+
+    .article-categorias h2 {
+        text-align: center;
+    }
+
+    .article-categorias ul {
+        width: 100%;
+        padding: 0;
+    }
+
+    .container-categorias button img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .categorias {
+        width: 100%;
+    }
+
+    .data {
+        width: 100%;
+    }
+
+    .container-data {
+        justify-content: space-evenly;
+    }
+
+    .dataPreencher {
+        width: 50%;
+    }
+
+    #ui-datepicker-div { 
+        width: 300px;
+        /* top: 2000px!important; */
+    }
+
+    .ui-datepicker-title {
+        font-size: 22px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ui-datepicker-prev, .ui-datepicker-next {
+        top: 20px!important;
+    }
+
+    .ui-datepicker-prev span, .ui-datepicker-next span {
+        top: 0!important;
+    }
+
+    .container-imagens {
+        margin-top: 10px;
+    }
+
+    .container-imagens img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    #btn-mais-eventos {
+        font-size: 22px;
+        padding: 18px 29px;
+        
+    }
+
+    .container-card-evento {
+        min-width: 250px;
+    }
+
+    .card-evento {
+        width: 250px;
+        height: 300px;
+    }
+
+    .container-texto-evento{
+        top: 150px;
+        
+    }
+
+    .container-texto-evento figcaption {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .img-mapa-londrina {
+        width: 300px;
+    }
+
+    .figure-evento-impulsionado {
+        width: 300px;
+        height: 200px;
+    }
+    
+}
