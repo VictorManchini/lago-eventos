@@ -1,0 +1,154 @@
+.fade-avaliar {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.300);
+    z-index: 10;
+    top: 0;
+}
+
+.avaliar {
+    box-sizing: border-box;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    padding: 25px;
+    border-radius: 28px;
+}
+
+.avaliar h1 {
+    color: #173C83;
+    font-weight: 400;
+    font-family: 'Viga', sans-serif;
+    font-size: 48px;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.avaliar a {
+    font-family: 'Viga', sans-serif;
+    color: #1A5AD6;
+    text-decoration: none;
+    text-align: center;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.avaliar a:hover {
+    color: black;
+}
+
+.avaliar p {
+    font-family: 'Viga', sans-serif;
+    color: #173C83;
+    font-size: 25px;
+    margin-bottom: 5px;
+    text-align: center;
+    user-select: none;
+}
+
+.avaliar .nome {
+    font-size: 32px;
+}
+
+.avaliar .container-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 28px;
+    margin-bottom: 5px;
+}
+
+.avaliar .container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.avaliar .rating-wrapper {
+    background-color: #1A5AD6;
+    padding: 0px 35px;
+    display: inline-block;
+    border-radius: 28px;
+    width: max-content;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.avaliar .ratings {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.avaliar .ratings span {
+    cursor: pointer;
+    color: #0b2250;
+    font-size: 50px;
+    transition: 200ms;
+}
+
+.avaliar .ratings span:hover {
+    color: white;
+    transform: scale(1.3);
+}
+
+.avaliar .ratings span:hover ~ span {
+    color: white;
+}
+
+.avaliar .ratings span[data-clicked] {
+    color: white;
+}
+
+.avaliar .ratings span[data-clicked] ~ span {
+    color: white;
+}
+
+.avaliar .buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 3%;
+}
+
+.avaliar .buttons button {
+    width: 40%;
+    height: 40px;
+    border: none;
+    font-family: 'Viga';
+    font-size: 18px;
+    padding: 7px 0;
+    border-radius: 10px;
+    color: white;
+}
+
+.avaliar .buttons button:not([disabled]) {
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+.avaliar .buttons .btn-avaliar:disabled,
+.avaliar .buttons .btn-avaliar[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.avaliar .buttons .btn-avaliar {
+    background-color: #1A5AD6;
+}
+
+.avaliar .buttons .btn-naoAvaliar {
+    background-color: #F00;
+}
+
+.avaliar .buttons button:hover:not([disabled]) {
+    background-color: black;
+    transform: scale(1.1);
+}

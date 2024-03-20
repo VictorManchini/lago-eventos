@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Viga';
+    src: url(../fonts/Viga-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Bangers';
+    src: url(../fonts/Bangers-Regular.ttf);
+}
+
+:root {
+    --azul-primario: #1A5AD6;
+    --azul-secundario: #173C83;
+    --laranja-primario: #D6801A;
+    --sombra-fonte: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --cinza-primario: #D9D9D9;
+    --cinza-texto: #585858;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image:
+        url(../img/cadastro&login/logo-reduzido.png),
+        url(../img/cadastro&login/Background.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom right, center;
+    background-size: 150px 150px, 100% 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+main form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    gap: 2px;
+}
+
+main form h1 {
+    font-family: 'Bangers';
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    user-select: none;
+    color: var(--azul-secundario);
+    text-shadow: var(--sombra-fonte);
+    margin-bottom: 98px;
+}
+
+
+main form .container-email , main form .container-senha, main form .container-confirmacaoSenha {
+    width: 100%;
+}
+
+main form input {
+    width: 100%;
+    height: 96px;
+    background-color: var(--cinza-primario);
+    color: var(--cinza-texto);
+    border: none;
+    font-size: 28px;
+    font-family: 'Viga';
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 30px;
+    border-radius: 28px;
+}
+
+main form .erro {
+    width: 100%;
+    height: 96px;
+    text-align: center;
+}
+
+main form .erro div.error {
+    margin-top: 8px;
+    color: red;
+    font-family: 'Viga';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+main form .botao-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+main form button {
+    width: 25%;
+    height: 85px;
+    flex-shrink: 0;
+    background-color: var(--azul-primario);
+    border: none;
+    border-radius: 28px;
+    color: white;
+    font-family: 'Viga';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+main form button:hover {
+    background-color: #D6801A;
+}
+
+main form .botao-links a {
+    text-decoration: none;
+}
+
+main form .botao-links a, main form .botao-links span{
+    color: var(--azul-secundario);
+    font-family: 'Viga';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+main form .botao-links a:hover {
+    color: var(--laranja-primario);
+}
+
+label.error {
+    color: red;
+    font-family: 'Viga';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.material-symbols-outlined {
+  font-size: 60px;
+  font-weight: 800;
+  color: white;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  user-select: none;
+}
+
+.material-symbols-outlined:hover {
+    color: var(--azul-secundario);
+}
+
+@media (max-width: 1001px) {
+
+    main form {
+        width: 90%;
+    }
+
+    main form h1 {
+        font-size: 52px;
+        margin-bottom: 49px;
+    }
+
+    main form input {
+        height: 70px;
+        font-size: 16px;
+        font-family: 'Viga';
+        padding: 0 20px;
+        border-radius: 20px;
+    }
+    
+    main form .erro {
+        height: 70px;
+    }
+
+    main form button {
+        width: 35%;
+        height: 60px;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+
+    main form .erro {
+        width: 100%;
+        height: 48px;
+    }
+    
+    main form .erro div.error {
+        margin-top: 8px;
+        color: red;
+        font-family: 'Viga';
+        font-size: 16px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 40px;
+        font-weight: 800;
+        top: 4%;
+        left: 6%;
+    }
+
+    main form .botao-links a, main form .botao-links span{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 780px) {
+    body {
+        background-position: bottom right -5%, center;
+    }
+}
+
+@media (max-width: 610px) {
+    body {
+        background-position: bottom right -10%, center;
+    }
+}
+
+@media (max-width: 510px) {
+    body {
+        background-position: bottom right -15%, center;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        background-position: bottom right -20%, center;
+    }
+}
